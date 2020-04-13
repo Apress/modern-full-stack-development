@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx tsc && node ./dist/server.js",
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js -e ts --exec \"npm run compile\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/node": "^13.1.0",
+    "@types/ws": "^6.0.4",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^7.2.1"
+  }
+}

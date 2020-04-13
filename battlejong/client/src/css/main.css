@@ -1,0 +1,45 @@
+.appContainer {
+  position : absolute;
+  height : 750px;
+  /* Align upper-left corner to center on page. */
+  left : 50%;
+  top : 50%;
+  /* Now transform it to shift it up and left by 50% it's dimensions, thereby centering it. */
+  transform : translate(-50%, -50%);
+  /* Border. */
+  border : 2px solid #0000ff;
+  /* Round corners. */
+  border-radius : 10px 10px 10px 10px;
+  -moz-border-radius : 10px 10px 10px 10px;
+  -webkit-border-radius : 10px 10px 10px 10px;
+  /* Define grid layout. */
+  display : grid;
+  grid-template-columns : 960px 300px;
+  /* Shadow. */
+  -webkit-box-shadow : 0 0 25px 0 rgba(255, 200, 0, 0.75);
+  -moz-box-shadow : 0 0 25px 0 rgba(255, 200, 0, 0.75);
+  box-shadow : 0 0 25px 0 rgba(255, 200, 0, 0.75);
+}
+
+/* The player's board area. */
+.playerBoard {
+  grid-column : 1 / 2;
+}
+
+/* Control area. */
+.controlArea {
+  height : 240px;
+  margin : 10px;
+  padding : 10px;
+  grid-column : 2 / 3;
+  border : 1px solid #000000;
+  /* Round corners. */
+  border-radius : 10px 10px 10px 10px;
+  -moz-border-radius : 10px 10px 10px 10px;
+  -webkit-border-radius : 10px 10px 10px 10px;
+}
+
+.highlightTile {
+  -webkit-filter : drop-shadow(0px 0px 50px #ff0000) contrast(150%) saturate(200%);
+  filter : drop-shadow(0px 0px 10px #ff0000) contrast(150%) saturate(200%);
+}

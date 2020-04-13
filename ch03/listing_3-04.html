@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Intro To React</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script>
+
+      function start() {
+
+        class Bookmark extends React.Component {
+
+          constructor(props) {
+            super(props);
+            console.log("Bookmark component created");
+            this.title = this.props.title;
+          }
+
+          render() {
+            return (
+              React.createElement("li", { },
+                React.createElement("h2", { }, this.title),
+                React.createElement("a", { href : this.props.href }, this.props.description),
+                React.createElement("button", {
+                  onClick : () => {
+                    this.title = this.title + "-CHANGED";
+                    this.setState({});
+                  }
+                }, "Click me")
+              )
+            );
+          }
+
+        } /* End Bookmark. */
+
+        const rootElement =
+          React.createElement("div", { },
+            React.createElement("h1", { }, "Bookmarks"),
+            React.createElement("ul", { },
+              React.createElement(
+                Bookmark, { title : "Etherient", href : "https://www.etherient.com", description : "The home page of Etherient" }
+              ),
+              React.createElement(
+                Bookmark, { title : "Frank's Site", href : "https://www.zammetti.com", description : "The web home of Frank W. Zammetti" }
+              )
+            )
+          );
+        ReactDOM.render(rootElement, document.getElementById("mainContainer"));
+
+      } /* End start(). */
+
+    </script>
+  </head>
+  <body onLoad="start();">
+    <div id="mainContainer"></div>
+  </body>
+</html>
