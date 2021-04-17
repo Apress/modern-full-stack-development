@@ -33,7 +33,7 @@ export class Worker {
    *                   but can't be used since the type comes from nodemailer, not app code).
    * @return           A Promise that eventually resolves to a string (null for success, error message for an error).
    */
-  public sendMessage(inOptions: SendMailOptions): Promise<string> {
+  public sendMessage(inOptions: SendMailOptions): Promise<void> {
 
     console.log("SMTP.Worker.sendMessage()", inOptions);
 
