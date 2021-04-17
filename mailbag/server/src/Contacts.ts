@@ -97,7 +97,7 @@ export class Worker {
    * @param  inID The ID of the contact to delete.
    * @return      A promise that eventually resolves to a string (null for success, or the error message for an error).
    */
-  public deleteContact(inID: string): Promise<string> {
+  public deleteContact(inID: string): Promise<void> {
 
     console.log("Contacts.Worker.deleteContact()", inID);
 
